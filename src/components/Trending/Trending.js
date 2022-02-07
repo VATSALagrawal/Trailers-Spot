@@ -2,16 +2,18 @@ import React , {useEffect , useState} from 'react';
 import axios from 'axios';
 import ContentCard from '../ContentCard/ContentCard';
 import './Trending.css';
+import CustomPagination from '../Pagination/CustomPagination';
 const Trending = () => {
   const [content, setContent] = useState([]);
+  const [page,setPage] = useState(1);
   const fetchTrending = async ()=>{
-    const { data } = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}`);
-    console.log(data.results);
+    const { data } = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${page}`);
+    // console.log(data);
     setContent(data.results);
   }
   useEffect(() => {
     fetchTrending();
-  }, []);
+  }, [page]);
   
   return <div>
       <span className='pageTitle'>Trending</span>
@@ -27,6 +29,7 @@ const Trending = () => {
             vote_count={c.vote_count} />
           ))}
       </div>
+      <CustomPagination setPage={setPage}/>
   </div>;
 };
 
