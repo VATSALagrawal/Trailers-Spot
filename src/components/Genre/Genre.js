@@ -34,7 +34,7 @@ const Genre = ({
         return () => {
             setGenres([]); // unmounting
         };
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
   return <div style={{padding:'3px'}}>

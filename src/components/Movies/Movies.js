@@ -4,7 +4,7 @@ import useGenre from '../../hooks/useGenre';
 import ContentCard from '../ContentCard/ContentCard';
 import Genre from '../Genre/Genre';
 import CustomPagination from '../Pagination/CustomPagination';
-
+import './Movies.css'
 const Movies = () => {
   const [page, setPage] = useState(1);
   const [numOfPages, setNumOfPages] = useState();
@@ -23,6 +23,7 @@ const Movies = () => {
   }
   useEffect(() => {
     fetchMovies();
+    // eslint-disable-next-line
   }, [page,genreforURL]);
   
   return <div>
