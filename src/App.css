@@ -1,6 +1,7 @@
-*{
+* {
   scroll-behavior: smooth;
 }
+
 .app {
   min-height: 100vh;
   background-color: #39445a;
@@ -22,7 +23,6 @@
   font-family: "Montserrat", sans-serif;
   font-size: 2vw;
   padding: 4px;
-  margin-bottom: 20px;
   border-radius: 50px;
   color: white;
 }
