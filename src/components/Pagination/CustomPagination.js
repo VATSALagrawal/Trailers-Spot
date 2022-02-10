@@ -20,7 +20,7 @@ const CustomPagination = ({setPage,numOfPages=100}) => {
     marginTop:"10px"
 }}>
     <ThemeProvider theme={darkTheme}>
-      <Pagination count={numOfPages} onChange={handlePageChange} color="primary" />
+      <Pagination count={numOfPages<100 ? numOfPages : 100} onChange={handlePageChange} color="primary" />
     </ThemeProvider>
   </div>;
 };

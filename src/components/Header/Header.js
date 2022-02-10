@@ -4,7 +4,7 @@ import './Header.css'
 const Header = () => {
   return <div>
       <header onClick={()=>window.scrollTo(0,0)} className='header'>
-          Trailers Spot
+          Trailers Spot 🍿🎬
       </header>
   </div>;
 };
